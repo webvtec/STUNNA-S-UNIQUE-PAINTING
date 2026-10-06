@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--k:#0a0a0a;--navy:#14264f;--ice:#edf1fc;--w:#fff;--off:#f9eff2;--g:#8a8a8a;--blue:#5a78ff;--pink:#e58aa8;--hl:rgba(10,10,10,.16);--hld:rgba(255,255,255,.16);
+:root{--k:#0a0a0a;--navy:#0b3a9c;--ice:#edf1fc;--w:#fff;--off:#f9eff2;--g:#8a8a8a;--blue:#5a78ff;--pink:#e58aa8;--hl:rgba(10,10,10,.16);--hld:rgba(255,255,255,.16);
 --serif:'Instrument Serif',Georgia,serif;--sans:'Inter Tight',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -19,6 +19,8 @@ img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1
 .wrap{max-width:1320px;margin:0 auto;padding:0 48px}
 .tag{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;font-weight:500}
 .dim{color:var(--g)}
+.sec{font-size:1.15rem;font-weight:600;letter-spacing:.22em;color:var(--k)}
+.sec.l{color:var(--w)}
 h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:.95;letter-spacing:-.02em}
 h2{font-size:clamp(3rem,7vw,6.4rem)}
 em{font-style:italic;color:var(--pink)}
@@ -123,19 +125,19 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   <h1 style="margin-top:26px"><span>Paint,</span><span class="i">perfected.</span></h1>
 </div></header>
 
-<div class="mq"><div class="lbl tag">LOCATION:</div><div class="track">
+<div class="mq"><div class="lbl tag">SERVICE LOCATIONS:</div><div class="track">
 <span>Welland</span><span>Niagara Falls</span><span>St. Catharines</span><span>Fonthill</span><span>Thorold</span><span>Port Colborne</span>
 <span>Welland</span><span>Niagara Falls</span><span>St. Catharines</span><span>Fonthill</span><span>Thorold</span><span>Port Colborne</span>
 </div></div>
 
 <section><div class="wrap about">
-  <div class="rv"><span class="tag dim">( 01 ) Studio</span></div>
+  <div></div>
   <div class="rv"><p class="big">We paint with the patience of craftsmen and the discipline of a studio, because the finish is only as good as what lies beneath it.</p>
   <p class="sm">Every surface is repaired, sanded and primed before colour is applied. We protect your space, respect your schedule and leave it immaculate.</p></div>
 </div></section>
 
 <section style="padding-top:0" id="services"><div class="wrap">
-  <div class="gh rv"><span class="tag dim">( 02 ) Services</span></div>
+  <div class="gh rv"><span class="tag sec">Services</span></div>
   <div class="svc rv">
     <a href="#quote" class="item"><span class="n">01</span><div><h3>Residential</h3><p>Interior, exterior, cabinetry, trim, doors and decks.</p></div><div class="ph"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="Residential" loading="lazy"></div></a>
     <a href="#quote" class="item"><span class="n">02</span><div><h3>Commercial</h3><p>Offices, storefronts and restaurants, with after-hours scheduling.</p></div><div class="ph"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80" alt="Commercial" loading="lazy"></div></a>
@@ -143,7 +145,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </div></section>
 
 <section class="proc" id="process"><div class="wrap">
-  <span class="tag dim">( 03 ) Process</span>
+  <span class="tag sec">Process</span>
   <h2 style="margin-top:26px" class="rv">Four steps. <em>Zero stress.</em></h2>
   <div class="cols rv">
     <div class="col"><span class="tag">I</span><h3>Consult</h3><p>A site visit and a clear, itemised quote.</p></div>
@@ -154,7 +156,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </div></section>
 
 <section class="gal" id="work"><div class="wrap">
-  <div class="gh rv"><h2>Selected <em>work</em></h2><span class="tag dim">( 04 ) Gallery</span></div>
+  <div class="gh rv"><h2>Selected <em>work</em></h2><span class="tag sec l">Gallery</span></div>
   <div class="tri rv">
     <div><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Interior" loading="lazy"><span class="tag">Interior</span></div>
     <div><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80" alt="Exterior" loading="lazy"><span class="tag">Exterior</span></div>
@@ -162,10 +164,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   </div>
 </div></section>
 
-<div class="st rv"><div class="wrap"><span class="tag dim">( 05 ) Words</span><p style="margin-top:34px">“Immaculate from start to finish. The house feels <em>brand new.</em>”</p><span class="tag dim">Homeowner, Welland</span></div></div>
+<div class="st rv"><div class="wrap"><span class="tag dim">Words</span><p style="margin-top:34px">“Immaculate from start to finish. The house feels <em>brand new.</em>”</p><span class="tag dim">Homeowner, Welland</span></div></div>
 
 <section class="contact" id="quote"><div class="wrap cg">
-  <div class="rv"><span class="tag dim">( 06 ) Enquire</span><h2 style="margin-top:26px">Begin your <em>project.</em></h2>
+  <div class="rv"><span class="tag sec l">Enquire</span><h2 style="margin-top:26px">Begin your <em>project.</em></h2>
     <p class="lead">Share a few details and we'll respond within one business day.</p>
     <div class="info"><div><span class="tag">Phone</span><a href="tel:+19055550123">(905) 555-0123</a></div><div><span class="tag">Email</span><a href="mailto:hello@stunnaspainting.ca">hello@stunnaspainting.ca</a></div><div><span class="tag">Area</span>Welland &amp; surrounding Niagara</div></div>
   </div>
