@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
 :root{--k:#0a0a0a;--navy:#0b3a9c;--ice:#edf1fc;--w:#fff;--off:#f9eff2;--g:#8a8a8a;--blue:#5a78ff;--pink:#e58aa8;--hl:rgba(10,10,10,.16);--hld:rgba(255,255,255,.16);
 --serif:'Instrument Serif',Georgia,serif;--sans:'Inter Tight',system-ui,sans-serif}
@@ -116,7 +117,8 @@ input[type=date]{color-scheme:dark}
 @media(max-width:900px){.cg{grid-template-columns:1fr;gap:60px}form{grid-template-columns:1fr}}
 footer{background:var(--k);color:var(--g);border-top:1px solid var(--hld);padding:30px 0}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.rv{opacity:0;transform:translateY(34px);transition:opacity 1s,transform 1s}.rv.in{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity 1s,transform 1s}.js .rv.in{opacity:1;transform:none}
+.adm{background:none;border:0;color:var(--g);font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;padding:0}.adm:hover{color:#fff}
 </style>
 </head>
 <body>
@@ -192,30 +194,48 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   </form>
 </div></section>
 
-<footer><div class="wrap tag"><span>© <script>document.write(new Date().getFullYear())</script> Stunna's Unique Painting</span><span>Welland, Ontario</span></div></footer>
+<footer><div class="wrap tag"><span>© <script>document.write(new Date().getFullYear())</script> Stunna's Unique Painting</span><span>Welland, Ontario · <button class="adm" id="adm" type="button">Admin login (Google)</button></span></div></footer>
 
+<script>
+/* page behaviour that must never depend on Firebase loading */
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+  var ADDONS=['Power Washing','Limewashing','Deck Staining','Fence Painting','Wall Painting','Ceiling Painting','Cabinet Painting','Trim & Molding','Storefront Repainting','Graffiti Removal','Facade Coating','Office Repainting','Warehouse Painting','Interior Drywall Repair','Parking Lot Lines','Warehouse Floor Markings','Custom Stencils'];
+  $('chips').innerHTML=ADDONS.map(function(a){return '<label class="chip"><input type="checkbox" value="'+esc(a)+'"><span>'+esc(a)+'</span></label>'}).join('');
+  function fill(){var o=$('t').value==='Line Painting'?['Line Painting']:['Exterior Painting','Interior Painting'];$('s').innerHTML=o.map(function(x){return '<option>'+x+'</option>'}).join('')}
+  $('t').addEventListener('change',fill);fill();
+  $('d').min=new Date().toISOString().slice(0,10);
+})();
+</script>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { firebaseConfig } from "./firebase-config.js";
 
-const db = getFirestore(initializeApp(firebaseConfig));
-const $ = id => document.getElementById(id);
-const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
-/* reveal */
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: .1 });
-document.querySelectorAll('.rv').forEach(el => io.observe(el));
-
-/* form options */
-const ADDONS = ['Power Washing','Limewashing','Deck Staining','Fence Painting','Wall Painting','Ceiling Painting','Cabinet Painting','Trim & Molding','Storefront Repainting','Graffiti Removal','Facade Coating','Office Repainting','Warehouse Painting','Interior Drywall Repair','Parking Lot Lines','Warehouse Floor Markings','Custom Stencils'];
-$('chips').innerHTML = ADDONS.map(a => `<label class="chip"><input type="checkbox" value="${esc(a)}"><span>${esc(a)}</span></label>`).join('');
-const fillServices = () => {
-  const opts = $('t').value === 'Line Painting' ? ['Line Painting'] : ['Exterior Painting', 'Interior Painting'];
-  $('s').innerHTML = opts.map(o => `<option>${o}</option>`).join('');
+const firebaseConfig = {
+  apiKey: "AIzaSyBYNkRxEA_48CPLSxvjl54h4HqIGZzvnh8",
+  authDomain: "stunnasuniquepainting.firebaseapp.com",
+  projectId: "stunnasuniquepainting",
+  storageBucket: "stunnasuniquepainting.firebasestorage.app",
+  messagingSenderId: "17536522805",
+  appId: "1:17536522805:web:e150b273da9f5afdc0af7c"
 };
-$('t').addEventListener('change', fillServices); fillServices();
-$('d').min = new Date().toISOString().slice(0, 10);
+
+const app = initializeApp(firebaseConfig), db = getFirestore(app), auth = getAuth(app);
+const $ = id => document.getElementById(id);
+const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* Google sign-in → admin dashboard */
+$('adm').onclick = async () => {
+  try { await signInWithPopup(auth, new GoogleAuthProvider()); location.href = 'admin.html'; }
+  catch (e) { console.error(e); if (e.code !== 'auth/popup-closed-by-user') alert('Google sign-in failed (' + e.code + ').'); }
+};
 
 /* gallery from Firestore */
 (async () => {

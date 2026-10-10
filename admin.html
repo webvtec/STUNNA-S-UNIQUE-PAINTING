@@ -61,6 +61,7 @@ label{display:block;font-size:.64rem;letter-spacing:.22em;text-transform:upperca
   <div><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password"></div>
   <p class="err" id="lerr" role="alert"></p>
   <button class="btn p" id="lbtn">Sign in</button>
+  <button class="btn" id="gbtn" type="button">Sign in with Google</button>
 </div>
 
 <div id="app" hidden>
@@ -90,9 +91,16 @@ label{display:block;font-size:.64rem;letter-spacing:.22em;text-transform:upperca
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { firebaseConfig } from "./firebase-config.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyBYNkRxEA_48CPLSxvjl54h4HqIGZzvnh8",
+  authDomain: "stunnasuniquepainting.firebaseapp.com",
+  projectId: "stunnasuniquepainting",
+  storageBucket: "stunnasuniquepainting.firebasestorage.app",
+  messagingSenderId: "17536522805",
+  appId: "1:17536522805:web:e150b273da9f5afdc0af7c"
+};
 
 const app = initializeApp(firebaseConfig), auth = getAuth(app), db = getFirestore(app);
 const $ = id => document.getElementById(id);
@@ -107,6 +115,7 @@ const doLogin = async () => {
   $('lbtn').disabled = false;
 };
 $('lbtn').onclick = doLogin;
+$('gbtn').onclick = async () => { $('lerr').textContent = ''; try { await signInWithPopup(auth, new GoogleAuthProvider()); } catch (e) { if (e.code !== 'auth/popup-closed-by-user') $('lerr').textContent = 'Google sign-in failed (' + e.code + ').'; } };
 $('pw').onkeydown = e => { if (e.key === 'Enter') doLogin(); };
 $('out').onclick = () => signOut(auth);
 
@@ -116,7 +125,7 @@ onAuthStateChanged(auth, user => {
   if (!user) return;
   unsubs.push(onSnapshot(query(collection(db, 'quotes'), orderBy('created', 'desc')), s => {
     quotes = s.docs.map(d => ({ id: d.id, ...d.data() })); renderQuotes();
-  }, e => { $('qlist').innerHTML = `<p class="empty">Could not load quotes (${esc(e.code)}). Check that your admin UID is set in the Firestore rules.</p>`; }));
+  }, e => { $('qlist').innerHTML = `<p class="empty">Signed in as ${esc(user.email)}, but this account isn't the admin yet (${esc(e.code)}). Put this UID in your Firestore rules where it says PASTE_ADMIN_UID, then publish and refresh:<br><br><strong>${esc(user.uid)}</strong></p>`; }));
   unsubs.push(onSnapshot(query(collection(db, 'gallery'), orderBy('created', 'desc')), s => {
     renderGallery(s.docs.map(d => ({ id: d.id, ...d.data() })));
   }));
