@@ -125,7 +125,7 @@ onAuthStateChanged(auth, user => {
   if (!user) return;
   unsubs.push(onSnapshot(query(collection(db, 'quotes'), orderBy('created', 'desc')), s => {
     quotes = s.docs.map(d => ({ id: d.id, ...d.data() })); renderQuotes();
-  }, e => { $('qlist').innerHTML = `<p class="empty">Signed in as ${esc(user.email)}, but this account isn't the admin yet (${esc(e.code)}). Put this UID in your Firestore rules where it says PASTE_ADMIN_UID, then publish and refresh:<br><br><strong>${esc(user.uid)}</strong></p>`; }));
+  }, e => { $('qlist').innerHTML = `<p class="empty">You don't have access to this dashboard.</p>`; }));
   unsubs.push(onSnapshot(query(collection(db, 'gallery'), orderBy('created', 'desc')), s => {
     renderGallery(s.docs.map(d => ({ id: d.id, ...d.data() })));
   }));
