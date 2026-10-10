@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin | Stunna's Unique Painting</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--k:#0a0a0a;--card:#141414;--line:rgba(255,255,255,.14);--g:#8a8a8a;--blue:#5a78ff;--pink:#e58aa8;--serif:'Instrument Serif',Georgia,serif;--sans:'Inter Tight',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--k);color:#fff;font-family:var(--sans);line-height:1.5;min-height:100vh}
+a{color:inherit}
+h1,h2{font-family:var(--serif);font-weight:400;line-height:1}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);gap:16px;flex-wrap:wrap}
+.top h1{font-size:1.8rem}
+.tabs{display:flex;gap:8px;margin:28px 0}
+.tab,.btn{font:inherit;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:11px 20px;border:1px solid var(--line);background:none;color:#fff;cursor:pointer;transition:.25s}
+.tab:hover,.btn:hover{border-color:#fff}
+.tab.on,.btn.p{background:#fff;color:var(--k);border-color:#fff}
+.btn.d{color:#ff9aa8}.btn.d:hover{border-color:#ff9aa8}
+.btn:disabled{opacity:.5;cursor:wait}
+input,select,textarea{font:inherit;color:#fff;background:none;border:0;border-bottom:1px solid rgba(255,255,255,.3);padding:8px 0;border-radius:0;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue)}
+select option{color:#000}
+label{display:block;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--g);margin-bottom:2px}
+.login{max-width:380px;margin:12vh auto 0;display:grid;gap:26px}
+.login h1{font-size:2.8rem}
+.err{color:#ff9aa8;font-size:.95rem;min-height:1.4em}
+.bar{display:flex;gap:14px;align-items:end;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap}
+.bar select{width:auto;min-width:160px}
+.q{background:var(--card);border:1px solid var(--line);padding:24px;margin-bottom:14px}
+.q.new{border-left:3px solid var(--pink)}
+.qh{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+.qh h2{font-size:1.9rem}
+.when{color:var(--g);font-size:.85rem}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px 24px;margin:18px 0}
+.meta div span{display:block;color:var(--g);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.pills i{font-style:normal;font-size:.8rem;border:1px solid var(--line);border-radius:99px;padding:3px 12px}
+.det{color:#cfcfcf;font-weight:300;white-space:pre-wrap;margin-bottom:16px}
+.act{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px}
+.act select{width:auto;min-width:140px}
+.empty{color:var(--g);padding:40px 0}
+.up{display:grid;grid-template-columns:1.2fr 1fr auto;gap:24px;align-items:end;background:var(--card);border:1px solid var(--line);padding:24px;margin-bottom:28px}
+.up small{grid-column:1/-1;color:var(--g)}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.gi{background:var(--card);border:1px solid var(--line)}
+.gi img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.gi div{padding:12px;display:grid;gap:10px}
+@media(max-width:700px){.up{grid-template-columns:1fr}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<div class="wrap login" id="login" hidden>
+  <h1>Admin</h1>
+  <div><label for="em">Email</label><input id="em" type="email" autocomplete="username"></div>
+  <div><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password"></div>
+  <p class="err" id="lerr" role="alert"></p>
+  <button class="btn p" id="lbtn">Sign in</button>
+</div>
+
+<div id="app" hidden>
+  <div class="wrap">
+    <div class="top"><h1>Stunna's Unique Painting</h1><div><a href="index.html" class="btn" style="text-decoration:none">View site</a> <button class="btn" id="out">Sign out</button></div></div>
+    <div class="tabs"><button class="tab on" data-t="quotes" id="tq">Quotes</button><button class="tab" data-t="gallery">Gallery</button></div>
+
+    <div id="quotes">
+      <div class="bar">
+        <div><label for="flt">Show</label><select id="flt"><option value="all">All quotes</option><option value="new">New</option><option value="contacted">Contacted</option><option value="won">Won</option><option value="closed">Closed</option></select></div>
+        <button class="btn" id="csv">Download CSV</button>
+      </div>
+      <div id="qlist"><p class="empty">Loading…</p></div>
+    </div>
+
+    <div id="gallery" hidden>
+      <div class="up">
+        <div><label for="files">Photos (JPG, PNG or WebP)</label><input id="files" type="file" accept="image/*" multiple></div>
+        <div><label for="cap">Label (optional)</label><input id="cap" maxlength="60" placeholder="Interior, Exterior…"></div>
+        <button class="btn p" id="upBtn">Upload</button>
+        <small id="upMsg">Photos are resized in your browser before upload, so large phone photos are fine.</small>
+      </div>
+      <div class="gg" id="glist"><p class="empty">Loading…</p></div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { firebaseConfig } from "./firebase-config.js";
+
+const app = initializeApp(firebaseConfig), auth = getAuth(app), db = getFirestore(app);
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let quotes = [], unsubs = [];
+
+/* ---------- auth ---------- */
+const doLogin = async () => {
+  $('lerr').textContent = ''; $('lbtn').disabled = true;
+  try { await signInWithEmailAndPassword(auth, $('em').value.trim(), $('pw').value); }
+  catch { $('lerr').textContent = 'Wrong email or password.'; }
+  $('lbtn').disabled = false;
+};
+$('lbtn').onclick = doLogin;
+$('pw').onkeydown = e => { if (e.key === 'Enter') doLogin(); };
+$('out').onclick = () => signOut(auth);
+
+onAuthStateChanged(auth, user => {
+  unsubs.forEach(u => u()); unsubs = [];
+  $('login').hidden = !!user; $('app').hidden = !user;
+  if (!user) return;
+  unsubs.push(onSnapshot(query(collection(db, 'quotes'), orderBy('created', 'desc')), s => {
+    quotes = s.docs.map(d => ({ id: d.id, ...d.data() })); renderQuotes();
+  }, e => { $('qlist').innerHTML = `<p class="empty">Could not load quotes (${esc(e.code)}). Check that your admin UID is set in the Firestore rules.</p>`; }));
+  unsubs.push(onSnapshot(query(collection(db, 'gallery'), orderBy('created', 'desc')), s => {
+    renderGallery(s.docs.map(d => ({ id: d.id, ...d.data() })));
+  }));
+});
+
+/* ---------- tabs ---------- */
+document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.toggle('on', x === b));
+  $('quotes').hidden = b.dataset.t !== 'quotes'; $('gallery').hidden = b.dataset.t !== 'gallery';
+});
+
+/* ---------- quotes ---------- */
+const fmt = t => { const d = t?.toDate ? t.toDate() : null; return d ? d.toLocaleString('en-CA', { dateStyle: 'medium', timeStyle: 'short' }) : 'Just now'; };
+function renderQuotes() {
+  const n = quotes.filter(q => q.status === 'new').length;
+  $('tq').textContent = n ? `Quotes (${n} new)` : 'Quotes';
+  const f = $('flt').value, list = quotes.filter(q => f === 'all' || q.status === f);
+  if (!list.length) { $('qlist').innerHTML = '<p class="empty">No quotes here yet.</p>'; return; }
+  $('qlist').innerHTML = list.map(q => `
+    <article class="q ${q.status === 'new' ? 'new' : ''}">
+      <div class="qh"><h2>${esc(q.name)}</h2><span class="when">${fmt(q.created)}</span></div>
+      <div class="meta">
+        <div><span>Phone</span><a href="tel:${esc(q.phone)}">${esc(q.phone)}</a></div>
+        <div><span>Email</span><a href="mailto:${esc(q.email)}">${esc(q.email)}</a></div>
+        <div><span>Property</span>${esc(q.property)}</div>
+        <div><span>Service</span>${esc(q.service)}</div>
+        <div><span>City</span>${esc(q.city) || '—'}</div>
+        <div><span>Preferred start</span>${esc(q.start) || '—'}</div>
+      </div>
+      ${(q.addons || []).length ? `<div class="pills">${q.addons.map(a => `<i>${esc(a)}</i>`).join('')}</div>` : ''}
+      ${q.details ? `<p class="det">${esc(q.details)}</p>` : ''}
+      <div class="act">
+        <select data-st="${q.id}">${['new','contacted','won','closed'].map(s => `<option value="${s}" ${q.status === s ? 'selected' : ''}>${s[0].toUpperCase() + s.slice(1)}</option>`).join('')}</select>
+        <button class="btn d" data-del="${q.id}">Delete</button>
+      </div>
+    </article>`).join('');
+}
+$('flt').onchange = renderQuotes;
+$('qlist').addEventListener('change', e => { const id = e.target.dataset.st; if (id) updateDoc(doc(db, 'quotes', id), { status: e.target.value }); });
+$('qlist').addEventListener('click', e => {
+  const id = e.target.dataset.del;
+  if (id && confirm('Delete this quote permanently?')) deleteDoc(doc(db, 'quotes', id));
+});
+$('csv').onclick = () => {
+  const cols = ['created','status','name','phone','email','property','service','city','start','addons','details'];
+  const q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+  const rows = quotes.map(x => cols.map(c => q(c === 'created' ? fmt(x.created) : c === 'addons' ? (x.addons || []).join('; ') : x[c])).join(','));
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([[cols.join(','), ...rows].join('\n')], { type: 'text/csv' }));
+  a.download = 'quotes.csv'; a.click();
+};
+
+/* ---------- gallery ---------- */
+function renderGallery(items) {
+  if (!items.length) { $('glist').innerHTML = '<p class="empty">No photos yet. Upload some above.</p>'; return; }
+  $('glist').innerHTML = items.map(g => `
+    <div class="gi"><img src="${g.image}" alt="">
+      <div><input value="${esc(g.label)}" maxlength="60" placeholder="Label" data-lab="${g.id}" aria-label="Photo label">
+      <button class="btn d" data-gdel="${g.id}">Delete</button></div></div>`).join('');
+}
+$('glist').addEventListener('change', e => { const id = e.target.dataset.lab; if (id) updateDoc(doc(db, 'gallery', id), { label: e.target.value.trim() }); });
+$('glist').addEventListener('click', e => {
+  const id = e.target.dataset.gdel;
+  if (id && confirm('Remove this photo from the gallery?')) deleteDoc(doc(db, 'gallery', id));
+});
+
+// Resize + compress so each photo stays well under Firestore's 1 MB document limit
+function shrink(file) {
+  return new Promise((ok, no) => {
+    const img = new Image(), url = URL.createObjectURL(file);
+    img.onload = () => {
+      const max = 1400, s = Math.min(1, max / Math.max(img.width, img.height));
+      const c = document.createElement('canvas'); c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+      let qlt = .82, out = c.toDataURL('image/jpeg', qlt);
+      while (out.length > 700000 && qlt > .4) { qlt -= .08; out = c.toDataURL('image/jpeg', qlt); }
+      out.length > 900000 ? no(new Error('too big')) : ok(out);
+    };
+    img.onerror = () => no(new Error('unreadable'));
+    img.src = url;
+  });
+}
+$('upBtn').onclick = async () => {
+  const files = [...$('files').files]; if (!files.length) { $('upMsg').textContent = 'Choose at least one photo first.'; return; }
+  $('upBtn').disabled = true; let done = 0;
+  for (const f of files) {
+    $('upMsg').textContent = `Uploading ${done + 1} of ${files.length}…`;
+    try { await addDoc(collection(db, 'gallery'), { image: await shrink(f), label: $('cap').value.trim(), created: serverTimestamp() }); done++; }
+    catch (e) { console.error(e); $('upMsg').textContent = `Could not upload ${f.name}. Try a different photo.`; $('upBtn').disabled = false; return; }
+  }
+  $('files').value = ''; $('cap').value = ''; $('upBtn').disabled = false;
+  $('upMsg').textContent = `${done} photo${done > 1 ? 's' : ''} added to the gallery.`;
+};
+</script>
+</body>
+</html>
