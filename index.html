@@ -85,8 +85,8 @@ em{font-style:italic;color:var(--pink)}
 .hero{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;min-height:min(94vh,920px);padding:110px 0 80px;color:var(--w);background:var(--k) url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=80') center/cover no-repeat}
 .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(10,10,10,.35),rgba(10,10,10,.7) 80%),linear-gradient(180deg,rgba(10,10,10,.5),rgba(10,10,10,.25) 40%,rgba(10,10,10,.92))}
 .hero .wrap{display:flex;flex-direction:column;align-items:center;width:100%}
-.hero h1{margin-top:28px;font-size:clamp(4rem,13vw,11.5rem);line-height:.86;letter-spacing:-.035em;text-shadow:0 2px 40px rgba(0,0,0,.5)}
-.hero h1 span{display:block}.hero h1 .i{font-style:italic;color:var(--pink)}
+.hero h1{margin-top:28px;font-size:clamp(1.9rem,8.6vw,6rem);line-height:1;letter-spacing:-.025em;white-space:nowrap;max-width:100%;text-shadow:0 2px 40px rgba(0,0,0,.5)}
+.hero h1 span{display:inline}.hero h1 .i{font-style:italic;color:var(--pink)}
 .hero .lede{margin:34px auto 0;color:rgba(255,255,255,.82);text-align:center;font-size:1.15rem}
 .hero .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:40px}
 .tags{margin-top:56px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--yellow);font-weight:500}
@@ -103,7 +103,7 @@ em{font-style:italic;color:var(--pink)}
 
 /* service area marquee */
 .mq{background:var(--k);color:var(--w);border-top:1px solid var(--hair);overflow:hidden;white-space:nowrap;padding:34px 0 30px}
-.mq .lbl{display:block;text-align:center;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px;font-weight:500}
+.mq .lbl{display:block;text-align:center;white-space:normal;padding:0 16px;font-size:clamp(.58rem,2.8vw,.7rem);letter-spacing:clamp(.12em,1.2vw,.32em);line-height:1.5;text-transform:uppercase;color:var(--yellow);margin-bottom:14px;font-weight:500}
 .mq .track{display:inline-block;animation:m 40s linear infinite}
 .mq span.c{font-family:var(--serif);font-size:2.2rem;margin-right:56px}
 .mq span.c:after{content:"✦";font-size:.9rem;margin-left:56px;color:var(--yellow)}
@@ -232,7 +232,7 @@ fieldset{border:0;min-width:0}
 <body>
 
 <header class="hdr"><div class="wrap">
-  <a class="logo" href="#top" aria-label="Stunnas Unique Painting, back to top"><svg class="mark" viewBox="0 0 40 34" aria-hidden="true"><path d="M2 18 20 3l18 15" fill="none" stroke="#ffc400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17v14h24V17" fill="#fff"/><path d="M16 20h3.5v3.5H16zm4.500 0H24v3.500h-3.500zM16 24.500h3.500V28H16zm4.500 0H24V28h-3.500z" fill="#0a0a0a"/></svg><b>Stunnas <i>Unique</i></b><span>Painting<br>Niagara, ON</span></a>
+  <a class="logo" href="#top" aria-label="Stunnas Unique Painting, back to top"><svg class="mark" viewBox="0 0 40 34" aria-hidden="true"><path d="M2 18 20 3l18 15" fill="none" stroke="#ffc400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17v14h24V17" fill="#fff"/><path d="M16 20h3.5v3.5H16zm4.500 0H24v3.500h-3.500zM16 24.500h3.500V28H16zm4.500 0H24V28h-3.500z" fill="#0a0a0a"/></svg><b>Stunnas <i>Unique</i></b><span>Painting</span></a>
   <nav class="nav" aria-label="Main">
     <a href="#about">About</a><a href="#services">Services</a><a href="#process">Process</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
   </nav>
@@ -243,7 +243,7 @@ fieldset{border:0;min-width:0}
   <section class="hero">
     <div class="wrap">
       <span class="kicker l" style="color:var(--pink)">Residential &amp; Commercial Painting</span>
-      <h1><span>Paint,</span><span class="i">perfected.</span></h1>
+      <h1><span>Paint,</span> <span class="i">perfected.</span></h1>
       <p class="lede">Interior and exterior painting for homes and businesses across the Niagara region, with every surface repaired, sanded and primed first, and every quote itemised before work begins.</p>
       <p class="sub">Residential / Commercial Painter<small>exceptional service, quality workmanship</small></p>
       <div class="cta"><a class="btn w" href="#quote">Request a quote</a><a class="btn line" href="#services">Our services</a></div>
@@ -251,7 +251,6 @@ fieldset{border:0;min-width:0}
         <p class="viewwork-note">Click here to view our work</p>
         <div class="gbtns"><a class="gbtn" href="#gallery">View the Gallery</a></div>
       </div>
-      <div class="tags"><span>Serving Niagara Falls &amp; surrounding areas</span></div>
     </div>
   </section>
 
@@ -263,7 +262,7 @@ fieldset{border:0;min-width:0}
     <div class="wrap">
       <div class="head center rv">
         <p class="kicker">About us</p>
-        <h2>Painted with patience, <em>finished with discipline.</em></h2>
+        <h2>Proper prep, <em>flawless finish.</em></h2>
         <p class="lede">We paint with the patience of craftsmen and the discipline of a studio, because the finish is only as good as what lies beneath it. Every surface is repaired, sanded and primed before colour is applied. We protect your space, respect your schedule and leave it immaculate.</p>
       </div>
       <ul class="trust rv">
@@ -417,9 +416,8 @@ fieldset{border:0;min-width:0}
 
 <footer class="foot">
   <div class="wrap">
-    <div><div class="logo"><svg class="mark" viewBox="0 0 40 34" aria-hidden="true"><path d="M2 18 20 3l18 15" fill="none" stroke="#ffc400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17v14h24V17" fill="#fff"/><path d="M16 20h3.5v3.5H16zm4.500 0H24v3.500h-3.500zM16 24.500h3.500V28H16zm4.500 0H24V28h-3.500z" fill="#0a0a0a"/></svg><b>Stunnas <i>Unique</i></b><span>Painting<br>Niagara, ON</span></div></div>
+    <div><div class="logo"><svg class="mark" viewBox="0 0 40 34" aria-hidden="true"><path d="M2 18 20 3l18 15" fill="none" stroke="#ffc400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17v14h24V17" fill="#fff"/><path d="M16 20h3.5v3.5H16zm4.500 0H24v3.500h-3.500zM16 24.500h3.500V28H16zm4.500 0H24V28h-3.500z" fill="#0a0a0a"/></svg><b>Stunnas <i>Unique</i></b><span>Painting</span></div></div>
     <ul><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#quote">Get a Quote</a></li></ul>
-    <ul><li>Niagara Falls · Niagara-on-the-Lake · St. Catharines</li><li>Welland · Fort Erie · Thorold · Port Colborne</li><li>Lincoln · Grimsby · And more</li><li><a href="tel:+16477077600">+1 (647) 707-7600</a></li></ul>
     <p class="small"><span>© <script>document.write(new Date().getFullYear())</script> Stunnas Unique Painting</span><span>Niagara, Ontario · <button class="adm" id="adm" type="button">Admin login (Google)</button></span></p>
   </div>
 </footer>
