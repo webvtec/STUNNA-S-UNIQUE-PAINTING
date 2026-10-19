@@ -2,109 +2,205 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stunna's Unique Painting | Residential & Commercial Painters in Welland, ON</title>
-<meta name="description" content="Residential and commercial painting in Welland, Niagara Falls, St. Catharines, Fonthill, Thorold and Port Colborne. Request a quote.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stunnas Unique Painting | Residential & Commercial Painters in Niagara, ON</title>
+<meta name="description" content="Residential and commercial painting, line painting and finishing services in Niagara Falls, Niagara-on-the-Lake, St. Catharines, Welland, Fort Erie, Thorold, Port Colborne, Lincoln and Grimsby. Itemised written quotes. Request a quote.">
+<meta name="theme-color" content="#0a0a0a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <style>
-:root{--k:#0a0a0a;--navy:#0b3a9c;--ice:#edf1fc;--w:#fff;--off:#f9eff2;--g:#8a8a8a;--blue:#5a78ff;--pink:#e58aa8;--hl:rgba(10,10,10,.16);--hld:rgba(255,255,255,.16);
---serif:'Instrument Serif',Georgia,serif;--sans:'Inter Tight',system-ui,sans-serif}
+:root{
+  --k:#0a0a0a;--coal:#111214;--navy:#0b3a9c;--navy-lo:#082a73;--ice:#edf1fc;--w:#fff;--off:#f9eff2;
+  --g:#8a8a8a;--blue:#1d5cff;--pink:#f0206f;--yellow:#ffc400;--gold:#e0a919;--ink:#555;
+  --hl:rgba(10,10,10,.16);--hld:rgba(255,255,255,.16);--hair:rgba(240,32,111,.45);
+  --grad:linear-gradient(120deg,#f0206f 0%,#ff8a00 55%,#ffc400 100%);--tri:linear-gradient(90deg,#f0206f 0%,#f0206f 33%,#ffc400 33%,#ffc400 66%,#1d5cff 66%,#1d5cff 100%);
+  --serif:'Instrument Serif',Georgia,serif;--sans:'Inter Tight',system-ui,sans-serif;--hdr:68px}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--w);color:var(--k);line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--w);color:var(--k);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.wrap{max-width:1320px;margin:0 auto;padding:0 48px}
-.tag{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;font-weight:500}
-.dim{color:var(--g)}
-.sec{font-size:1.15rem;font-weight:600;letter-spacing:.22em;color:var(--k)}
-.sec.l{color:var(--w)}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:.95;letter-spacing:-.02em}
-h2{font-size:clamp(3rem,7vw,6.4rem)}
+ul,ol{list-style:none}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+section[id]{scroll-margin-top:var(--hdr)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(24px,env(safe-area-inset-left,0px))}
+@media(min-width:900px){.wrap{padding:0 48px}}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.015em;text-wrap:balance}
+h2{font-size:clamp(2.4rem,5.2vw,4.4rem);margin-top:18px}
 em{font-style:italic;color:var(--pink)}
-.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--pink);margin-right:12px;vertical-align:middle}
-.btn{display:inline-flex;align-items:center;gap:14px;padding:18px 34px;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;border:1px solid;cursor:pointer;background:none;font-family:var(--sans);transition:.4s}
-.btn.w{background:var(--w);color:var(--k);border-color:var(--w)}.btn.w:hover{background:transparent;color:var(--w)}
+.kicker{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--navy)}
+.kicker:before{content:"";width:36px;height:1px;background:currentColor;flex:none}
+.dark .kicker,.kicker.l{color:var(--yellow)}
+.lede{font-size:1.1rem;color:var(--ink);max-width:54ch;margin-top:20px;font-weight:300}
+.dark .lede{color:rgba(255,255,255,.7)}
+.rule{width:64px;height:2px;background:var(--grad);margin-top:28px}
+.head.center{text-align:center;max-width:780px;margin:0 auto}
+.head.center .kicker:after{content:"";width:36px;height:1px;background:currentColor}
+.head.center .lede{margin-left:auto;margin-right:auto}
+.sec{padding:clamp(72px,10vw,140px) 0}
+.sec.dark{background:var(--k);color:var(--w)}
+.sec.navy{background:var(--navy);color:var(--w)}
+.sec.navy .kicker{color:#fff}
+.sec.navy .lede{color:rgba(255,255,255,.78)}
+.sec.tint{background:var(--off)}
+.sec.ice{background:var(--ice)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:18px 34px;min-height:52px;font:500 .72rem/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;border:1px solid;cursor:pointer;background:none;transition:.35s;border-radius:0}
+.btn.w{background:var(--yellow);color:var(--k);border-color:var(--yellow)}.btn.w:hover{background:transparent;color:var(--yellow)}
+.btn.p{background:var(--pink);color:#fff;border-color:var(--pink)}.btn.p:hover{background:transparent;color:var(--pink)}
+.btn.n{background:var(--navy);color:var(--w);border-color:var(--navy)}.btn.n:hover{background:transparent;color:var(--navy)}
+.btn.g{background:var(--pink);color:#fff;border-color:var(--pink)}
+.btn.line{color:var(--w);border-color:rgba(255,255,255,.5)}.btn.line:hover{background:var(--w);color:var(--k)}
 .btn:disabled{opacity:.5;cursor:wait}
-/* nav */
-nav{position:fixed;inset:0 0 auto;z-index:50;color:var(--w);background:rgba(255,255,255,.08);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border-bottom:1px solid rgba(255,255,255,.22);box-shadow:0 8px 32px rgba(0,0,0,.12)}
-.nav{display:flex;justify-content:space-between;align-items:center;height:56px}
-.logo{font-family:var(--serif);font-size:1.35rem;white-space:nowrap}
-.links{display:flex;gap:40px}
-.links a{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500}
-@media(max-width:820px){.links a:not(:last-child){display:none}.wrap{padding:0 24px}}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(10,10,10,.96);border-bottom:1px solid var(--hair);color:var(--w)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--hdr)}
+.logo{display:flex;align-items:center;gap:14px;min-width:0}
+.logo b{font:400 1.7rem/1 var(--serif);letter-spacing:.02em;white-space:nowrap}
+.logo b i{font-style:italic;color:var(--pink)}
+.mark{width:40px;height:34px;flex:none}
+.pg{background:var(--k);color:var(--w);padding:clamp(56px,8vw,110px) 0 clamp(72px,9vw,120px);min-height:70vh}
+.pg .kicker{color:var(--yellow)}
+.cta-band{background:var(--navy);color:#fff;text-align:center;padding:clamp(56px,8vw,96px) 0}
+.cta-band h2{margin:0 0 28px}
+[hidden]{display:none!important}
+.stripe{height:6px;background:var(--tri)}
+.phonepill{display:inline-flex;align-items:center;gap:14px;margin-top:30px;padding:14px 34px 14px 16px;background:var(--pink);border:2px solid var(--yellow);font:500 clamp(1.6rem,4vw,2.6rem)/1 var(--serif);letter-spacing:.02em;color:#fff;box-shadow:0 10px 36px rgba(240,32,111,.45);transition:transform .25s}
+.phonepill:hover{transform:translateY(-2px)}
+.phonepill i{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--blue);border:2px solid var(--yellow);font-style:normal;font-size:1.2rem}
+.sub{margin-top:22px;font:400 1.5rem/1.2 var(--serif);color:#fff}.sub small{display:block;margin-top:6px;font:italic 400 1.15rem var(--serif);color:var(--yellow)}
+.logo span{font-size:.6rem;line-height:1.3;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);padding-left:14px;border-left:1px solid var(--hair)}
+.nav{display:flex;align-items:center;gap:clamp(20px,3vw,40px)}
+.nav a:not(.btn){font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.7);transition:color .2s}
+.nav a:not(.btn):hover{color:var(--pink)}
+.nav .btn{padding:14px 22px;min-height:0;font-size:.66rem}
+@media(max-width:900px){.nav a:not(.btn){display:none}.logo span{display:none}}
+@media(max-width:480px){.logo b{font-size:1.35rem}.nav .btn{padding:12px 14px;letter-spacing:.16em}}
+
 /* hero */
-.hero{background:var(--k) url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=80') center/cover no-repeat;color:var(--w);min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:140px 0 80px;position:relative;overflow:hidden}
-.hero h1{font-size:clamp(4.4rem,15.5vw,16rem);line-height:.82;letter-spacing:-.04em}
-.hero h1 span{display:block}
-.hero h1 .i{font-style:italic;padding-left:.7em}
-.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.35) 40%,rgba(10,10,10,.92) 100%)}
-.hero .wrap{position:relative;z-index:2;width:100%}
-/* marquee */
-.mq{background:#fbf3f5;border-bottom:1px solid var(--hl);overflow:hidden;white-space:nowrap;padding:22px 0}
+.hero{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;min-height:min(94vh,920px);padding:110px 0 80px;color:var(--w);background:var(--k) url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=80') center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(10,10,10,.35),rgba(10,10,10,.7) 80%),linear-gradient(180deg,rgba(10,10,10,.5),rgba(10,10,10,.25) 40%,rgba(10,10,10,.92))}
+.hero .wrap{display:flex;flex-direction:column;align-items:center;width:100%}
+.hero h1{margin-top:28px;font-size:clamp(4rem,13vw,11.5rem);line-height:.86;letter-spacing:-.035em;text-shadow:0 2px 40px rgba(0,0,0,.5)}
+.hero h1 span{display:block}.hero h1 .i{font-style:italic;color:var(--pink)}
+.hero .lede{margin:34px auto 0;color:rgba(255,255,255,.82);text-align:center;font-size:1.15rem}
+.hero .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:40px}
+.tags{margin-top:56px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--yellow);font-weight:500}
+.tags span+span:before{content:"\25C6";margin-right:28px;font-size:7px;vertical-align:middle;color:var(--pink)}
+.viewwork{margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:18px;width:100%}
+.viewwork-note{display:flex;flex-direction:column;align-items:center;gap:12px;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:#fff;font-weight:500}
+.viewwork-note:after{content:"";width:9px;height:9px;border-right:1px solid var(--pink);border-bottom:1px solid var(--pink);transform:rotate(45deg);animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(0) rotate(45deg)}50%{transform:translateY(5px) rotate(45deg)}}
+.gbtns{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.gbtn{display:inline-flex;align-items:center;gap:14px;padding:16px 28px;min-height:52px;font:500 .72rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:#fff;background:rgba(10,10,10,.5);border:1px solid var(--pink);cursor:pointer;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);transition:.3s}
+.gbtn:after{content:"\2192";letter-spacing:0;color:var(--pink);transition:.25s}
+.gbtn:hover{background:var(--w);color:var(--k);transform:translateY(-2px)}.gbtn:hover:after{color:var(--k);transform:translateX(4px)}
+@media(max-width:560px){.hero{min-height:0;padding:84px 0 56px}.hero .cta .btn{width:100%}.gbtns{width:100%;flex-direction:column}.gbtn{width:100%;justify-content:space-between}.tags{gap:12px 18px;letter-spacing:.2em}.tags span+span:before{margin-right:18px}}
+
+/* service area marquee */
+.mq{background:var(--k);color:var(--w);border-top:1px solid var(--hair);overflow:hidden;white-space:nowrap;padding:34px 0 30px}
+.mq .lbl{display:block;text-align:center;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px;font-weight:500}
 .mq .track{display:inline-block;animation:m 40s linear infinite}
-.mq .lbl{display:block;padding:0 48px 10px;max-width:1320px;margin:0 auto}
-@media(max-width:820px){.mq .lbl{padding:0 24px 10px}}
-@media(prefers-reduced-motion:reduce){.mq .track{animation:none}}
-.mq span{font-family:var(--serif);font-size:2rem;margin-right:56px}
-.mq span:after{content:"✦";font-size:.9rem;margin-left:56px;color:var(--pink)}
+.mq span.c{font-family:var(--serif);font-size:2.2rem;margin-right:56px}
+.mq span.c:after{content:"✦";font-size:.9rem;margin-left:56px;color:var(--yellow)}
 @keyframes m{to{transform:translateX(-50%)}}
-section{padding:150px 0}
-/* about */
-.about{display:grid;grid-template-columns:1fr 2fr;gap:80px}
-.about p.big{font-family:var(--serif);font-size:clamp(1.8rem,3.2vw,2.9rem);line-height:1.15;margin-bottom:40px}
-.about p.sm{max-width:520px;color:#555;font-weight:300}
-@media(max-width:860px){.about{grid-template-columns:1fr;gap:30px}section{padding:100px 0}}
-/* services */
-.gh{display:flex;justify-content:space-between;align-items:end;margin-bottom:70px;gap:30px;flex-wrap:wrap}
-.svc{border-top:1px solid var(--k)}
-.item{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;padding:44px 0;border-bottom:1px solid var(--hl);align-items:center}
-.item h3{font-size:clamp(2.8rem,6vw,5.6rem);transition:.5s}
-.item:hover h3{font-style:italic;padding-left:20px;color:var(--pink)}
-.item p{color:#555;font-weight:300;font-size:1.05rem;max-width:380px}
-.addons-h{margin:90px 0 26px}
-.addons{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0 48px;border-top:1px solid var(--k)}
-.addons li{font-family:var(--serif);font-size:1.7rem;line-height:1.2;padding:16px 0;border-bottom:1px solid var(--hl)}
-@media(max-width:860px){.item{grid-template-columns:1fr;gap:12px}.addons{grid-template-columns:1fr 1fr;gap:0 24px}.addons li{font-size:1.35rem}}
-@media(max-width:480px){.addons{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.mq .track,.viewwork-note:after{animation:none}}
+
+/* trust strip */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hl);border-left:1px solid var(--hl);margin-top:clamp(40px,6vw,70px);text-align:left}
+.trust li{padding:30px 28px 34px;border-right:1px solid var(--hl);border-bottom:1px solid var(--hl);background:var(--w)}
+.trust b{display:block;font:400 1.7rem/1.1 var(--serif);color:var(--navy)}
+.trust span{display:block;margin-top:10px;font-size:.92rem;color:var(--ink);font-weight:300}
+@media(max-width:900px){.trust{grid-template-columns:1fr 1fr}}@media(max-width:520px){.trust{grid-template-columns:1fr}}
+
+/* services grid */
+.svc-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px clamp(24px,4vw,56px);margin-top:clamp(36px,5vw,60px)}
+.svc-list li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;align-items:baseline;padding-top:22px;border-top:1px solid var(--hl)}
+.svc-list .si{grid-row:1/span 2;font:italic 1.1rem/1 var(--serif);color:var(--pink)}
+.svc-list h3{font-size:1.7rem;line-height:1.1}
+.svc-list p{font-size:.95rem;line-height:1.5;color:var(--ink);font-weight:300}
+@media(max-width:899px){.svc-list{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.svc-list{grid-template-columns:minmax(0,1fr)}}
+
+/* service rows */
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,110px);align-items:center}
+.row+.row{margin-top:clamp(72px,9vw,128px)}
+.row.rev .media{order:-1}
+.num{font:italic 1.5rem/1 var(--serif);color:var(--pink);letter-spacing:.08em}
+.row h3{font-size:clamp(2.4rem,4.4vw,4rem);line-height:1.02;margin-top:14px}
+.row h3 em{color:var(--pink)}
+.scope{margin-top:30px;border-top:1px solid var(--hl)}
+.scope li{display:grid;grid-template-columns:9.5rem minmax(0,1fr);gap:4px 24px;padding:17px 0;border-bottom:1px solid var(--hl)}
+.scope b{font:400 1.35rem/1.25 var(--serif)}
+.scope span{font-size:.95rem;color:var(--ink);font-weight:300}
+.media{position:relative;padding:14px}
+.media:before{content:"";position:absolute;inset:0;border:1px solid var(--hl);pointer-events:none}
+.media:after{content:"";position:absolute;left:0;top:0;width:56px;height:56px;border-top:3px solid var(--yellow);border-left:3px solid var(--yellow);pointer-events:none}
+.photo{position:relative;overflow:hidden;aspect-ratio:4/5;background:radial-gradient(420px 320px at 30% 15%,rgba(90,120,255,.45),transparent 70%),linear-gradient(135deg,var(--navy),var(--k))}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.media:hover .photo img{transform:scale(1.04)}
+@media(max-width:899px){.row{grid-template-columns:minmax(0,1fr);gap:36px}.row.rev .media,.row .media{order:-1}.photo{aspect-ratio:4/3}}
+@media(max-width:520px){.scope li{grid-template-columns:minmax(0,1fr)}}
+
+/* add-ons */
+.addons{display:grid;grid-template-columns:repeat(3,1fr);gap:0 48px;border-top:1px solid var(--hld);margin-top:clamp(36px,5vw,60px)}
+.addons li{font:400 1.55rem/1.2 var(--serif);padding:16px 0;border-bottom:1px solid var(--hld);display:flex;align-items:center;gap:14px}
+.addons li:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--yellow);flex:none}
+@media(max-width:860px){.addons{grid-template-columns:1fr 1fr;gap:0 24px}.addons li{font-size:1.3rem}}@media(max-width:480px){.addons{grid-template-columns:1fr}}
+
 /* process */
-.proc{background:var(--off)}
-.cols{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--k);margin-top:70px}
-.col{padding:30px 30px 10px 0;border-right:1px solid var(--hl);padding-left:30px}
-.col:first-child{padding-left:0}.col:last-child{border:0}
-.col .tag{color:var(--g)}
-.col h3{font-size:2.4rem;margin:40px 0 14px}
-.col p{color:#555;font-weight:300;font-size:.93rem}
-@media(max-width:900px){.cols{grid-template-columns:1fr 1fr}.col{padding:30px 20px;border-bottom:1px solid var(--hl)}.col:first-child{padding-left:20px}}
-@media(max-width:520px){.cols{grid-template-columns:1fr}}
-/* gallery (loaded from Firestore) */
-.gal{background:var(--navy);color:var(--w)}
-.gal .gh{margin-bottom:50px}
-.grid{columns:3 280px;column-gap:14px}
-.grid figure{break-inside:avoid;margin:0 0 14px;overflow:hidden;position:relative;background:rgba(255,255,255,.06)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:clamp(48px,6vw,80px);border-top:1px solid var(--hl);border-left:1px solid var(--hl)}
+.steps li{padding:40px 32px 44px;border-right:1px solid var(--hl);border-bottom:1px solid var(--hl)}
+.steps .n{font:italic 3rem/1 var(--serif);background:linear-gradient(120deg,#f0206f,#1d5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.steps h3{font-size:2rem;margin-top:22px}
+.steps p{margin-top:12px;font-size:.98rem;color:var(--ink);font-weight:300}
+
+/* gallery band + overlay */
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.grid{columns:3 280px;column-gap:14px;margin-top:44px}
+.grid figure{break-inside:avoid;margin:0 0 14px;overflow:hidden;position:relative;background:rgba(255,255,255,.08);cursor:zoom-in;border:1px solid rgba(255,255,255,.18)}
+.grid img{width:100%;height:auto;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .grid figure:hover img{transform:scale(1.04)}
-.grid img{height:auto}
-.grid figcaption{position:absolute;left:18px;bottom:16px;color:#fff;text-shadow:0 0 14px rgba(0,0,0,.7)}
-.empty{color:rgba(255,255,255,.65);font-weight:300}
-/* contact */
-.contact{background:var(--k);color:var(--w);padding-bottom:110px}
-.cg{display:grid;grid-template-columns:1fr 1.2fr;gap:100px}
-.contact .lead{color:rgba(255,255,255,.6);font-weight:300;max-width:380px;margin:30px 0 60px}
-.info div{padding:20px 0;border-top:1px solid var(--hld)}
-.info div:last-child{border-bottom:1px solid var(--hld)}
-.info .tag{display:block;color:var(--g);margin-bottom:3px}
-form{display:grid;grid-template-columns:1fr 1fr;gap:36px 30px;align-content:start}
-.full{grid-column:1/-1}
-label,.lab{display:block;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--g);margin-bottom:4px}
-input,select,textarea{width:100%;background:none;border:0;border-bottom:1px solid rgba(255,255,255,.3);color:#fff;font:inherit;font-weight:300;font-size:1.05rem;padding:8px 0 12px;border-radius:0;transition:.3s}
+.grid figcaption{position:absolute;left:18px;bottom:16px;color:#fff;text-shadow:0 0 14px rgba(0,0,0,.8);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase}
+.empty{color:rgba(255,255,255,.7);font-weight:300;margin-top:30px}
+.gal{position:fixed;inset:0;z-index:70;background:var(--k);color:var(--w);overflow-y:auto;overscroll-behavior:contain}
+.gal[hidden],.lb[hidden]{display:none}
+.gal-bar{position:sticky;top:0;z-index:2;padding-top:env(safe-area-inset-top,0px);background:rgba(10,10,10,.96);border-bottom:1px solid var(--hair)}
+.gal-bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--hdr)}
+.gal-bar .btn{padding:12px 20px;min-height:0;font-size:.66rem}
+.gal-body{padding-top:clamp(40px,6vw,72px);padding-bottom:96px}
+.gal-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.gtab{padding:12px 20px;font:500 .68rem/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.65);background:transparent;border:1px solid var(--hld);cursor:pointer;transition:.25s}
+.gtab:hover{color:#fff;border-color:var(--pink)}.gtab.on{background:var(--w);color:var(--k);border-color:var(--w)}
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:16px;margin-top:36px}
+.gal-item{display:block;padding:0;border:1px solid var(--hld);background:var(--coal);cursor:zoom-in;aspect-ratio:4/3;overflow:hidden;position:relative}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal-item:hover img{transform:scale(1.04)}
+.gal-item span{position:absolute;left:14px;bottom:12px;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:#fff;text-shadow:0 0 12px rgba(0,0,0,.9)}
+.gal-msg{margin-top:36px;color:rgba(255,255,255,.65)}
+.lb{position:fixed;inset:0;z-index:75;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,.96);cursor:zoom-out}
+.lb img{max-width:100%;max-height:92vh;object-fit:contain}
+
+/* quote form */
+.quote-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,100px);align-items:start}
+.info{margin-top:44px}
+.info div{padding:20px 0;border-top:1px solid var(--hld)}.info div:last-child{border-bottom:1px solid var(--hld)}
+.info .tag{display:block;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--yellow);margin-bottom:3px;font-weight:500}
+.info a,.info p{font:400 1.7rem/1.2 var(--serif)}.info a:hover{color:var(--pink)}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 26px;padding:clamp(24px,4vw,48px);background:var(--coal);border:1px solid var(--hair);align-content:start}
+.field{min-width:0}.full{grid-column:1/-1}
+label,.lab{display:block;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--yellow);margin-bottom:6px;font-weight:500}
+input,select,textarea{width:100%;min-width:0;background:none;border:0;border-bottom:1px solid rgba(255,255,255,.3);color:#fff;font:300 1.05rem/1.4 var(--sans);padding:10px 2px 12px;border-radius:0;-webkit-appearance:none;appearance:none;transition:.3s}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--yellow) 50%),linear-gradient(135deg,var(--yellow) 50%,transparent 50%);background-position:calc(100% - 14px) 52%,calc(100% - 8px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:30px}
 select option{color:#000}
-input::placeholder,textarea::placeholder{color:rgba(255,255,255,.28)}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.3)}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue)}
-textarea{min-height:90px;resize:vertical}
+textarea{min-height:110px;resize:vertical}
 input[type=date]{color-scheme:dark}
+fieldset{border:0;min-width:0}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .chip{position:relative;margin:0;letter-spacing:0;text-transform:none;font-size:.9rem;color:rgba(255,255,255,.75);cursor:pointer}
 .chip input{position:absolute;opacity:0;width:0;height:0}
@@ -113,88 +209,222 @@ input[type=date]{color-scheme:dark}
 .chip input:checked+span{background:var(--w);color:var(--k);border-color:var(--w)}
 .chip input:focus-visible+span{outline:2px solid var(--blue);outline-offset:2px}
 .err{color:#ff9aa8;font-size:.95rem;display:none}
-.ok{display:none}.ok h3{font-size:3.4rem;margin-bottom:8px}.ok p{color:var(--g)}
-@media(max-width:900px){.cg{grid-template-columns:1fr;gap:60px}form{grid-template-columns:1fr}}
-footer{background:var(--k);color:var(--g);border-top:1px solid var(--hld);padding:30px 0}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ok{display:none}.ok h3{font-size:3.2rem;margin-bottom:8px}.ok p{color:rgba(255,255,255,.7)}
+@media(max-width:899px){.quote-grid{grid-template-columns:minmax(0,1fr)}}@media(max-width:560px){form{grid-template-columns:minmax(0,1fr)}form .btn{width:100%}}
+
+/* footer */
+.foot{background:var(--k);color:rgba(255,255,255,.6);border-top:1px solid var(--hair)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px 56px;padding-top:60px;padding-bottom:40px}
+.foot .logo b{font-size:2.2rem;color:#fff}
+.foot ul{display:grid;gap:8px;font-size:.9rem}.foot a:hover{color:var(--pink)}
+.foot .stripe{width:100%}
+.foot .small{width:100%;padding-top:26px;border-top:1px solid var(--hld);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.adm{background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;padding:0}.adm:hover{color:#fff}
+
+/* call float */
+.callfab{position:fixed;z-index:60;right:max(18px,env(safe-area-inset-right,0px));bottom:max(18px,env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;gap:10px;padding:14px 22px;min-height:52px;background:var(--pink);border:2px solid var(--yellow);color:#fff;font:500 .7rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;border-radius:999px;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .25s}
+.callfab:hover{transform:translateY(-2px)}.callfab svg{width:18px;height:18px;fill:currentColor}
+@media(max-width:480px){.callfab{padding:14px}.callfab span{display:none}}
+
 .js .rv{opacity:0;transform:translateY(34px);transition:opacity 1s,transform 1s}.js .rv.in{opacity:1;transform:none}
-.adm{background:none;border:0;color:var(--g);font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;padding:0}.adm:hover{color:#fff}
 </style>
 </head>
 <body>
-<nav><div class="wrap nav"><a href="#" class="logo">Stunna's Unique Painting</a>
-<div class="links"><a href="#services">Services</a><a href="#process">Process</a><a href="#work">Gallery</a><a href="#quote">Quote</a></div></div></nav>
 
-<header class="hero"><div class="wrap">
-  <span class="tag"><i class="dot"></i>Painting · Welland, Ontario</span>
-  <h1 style="margin-top:26px"><span>Paint,</span><span class="i">perfected.</span></h1>
+<header class="hdr"><div class="wrap">
+  <a class="logo" href="#top" aria-label="Stunnas Unique Painting, back to top"><svg class="mark" viewBox="0 0 40 34" aria-hidden="true"><path d="M2 18 20 3l18 15" fill="none" stroke="#ffc400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17v14h24V17" fill="#fff"/><path d="M16 20h3.5v3.5H16zm4.500 0H24v3.500h-3.500zM16 24.500h3.500V28H16zm4.500 0H24V28h-3.500z" fill="#0a0a0a"/></svg><b>Stunnas <i>Unique</i></b><span>Painting<br>Niagara, ON</span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="#about">About</a><a href="#services">Services</a><a href="#process">Process</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+  </nav>
 </div></header>
 
-<div class="mq"><div class="lbl tag">SERVICE LOCATIONS:</div><div class="track">
-<span>Welland</span><span>Niagara Falls</span><span>St. Catharines</span><span>Fonthill</span><span>Thorold</span><span>Port Colborne</span>
-<span>Welland</span><span>Niagara Falls</span><span>St. Catharines</span><span>Fonthill</span><span>Thorold</span><span>Port Colborne</span>
-</div></div>
+<main id="top">
+  <div id="homeView">
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker l" style="color:var(--pink)">Residential &amp; Commercial Painting</span>
+      <h1><span>Paint,</span><span class="i">perfected.</span></h1>
+      <p class="lede">Interior and exterior painting for homes and businesses across the Niagara region, with every surface repaired, sanded and primed first, and every quote itemised before work begins.</p>
+      <p class="sub">Residential / Commercial Painter<small>exceptional service, quality workmanship</small></p>
+      <div class="cta"><a class="btn w" href="#quote">Request a quote</a><a class="btn line" href="#services">Our services</a></div>
+      <div class="viewwork">
+        <p class="viewwork-note">Click here to view our work</p>
+        <div class="gbtns"><a class="gbtn" href="#gallery">View the Gallery</a></div>
+      </div>
+      <div class="tags"><span>Serving Niagara Falls &amp; surrounding areas</span></div>
+    </div>
+  </section>
 
-<section><div class="wrap about">
-  <div></div>
-  <div class="rv"><p class="big">We paint with the patience of craftsmen and the discipline of a studio, because the finish is only as good as what lies beneath it.</p>
-  <p class="sm">Every surface is repaired, sanded and primed before colour is applied. We protect your space, respect your schedule and leave it immaculate.</p></div>
-</div></section>
+  <div class="mq" aria-label="Service locations"><span class="lbl">Serving Niagara Falls &amp; surrounding areas</span><div class="track">
+    <span class="c">Niagara Falls</span><span class="c">Niagara-on-the-Lake</span><span class="c">St. Catharines</span><span class="c">Welland</span><span class="c">Fort Erie</span><span class="c">Thorold</span><span class="c">Port Colborne</span><span class="c">Lincoln</span><span class="c">Grimsby</span><span class="c">Niagara Falls</span><span class="c">Niagara-on-the-Lake</span><span class="c">St. Catharines</span><span class="c">Welland</span><span class="c">Fort Erie</span><span class="c">Thorold</span><span class="c">Port Colborne</span><span class="c">Lincoln</span><span class="c">Grimsby</span><span class="c">And more</span>
+  </div></div>
 
-<section style="padding-top:0" id="services"><div class="wrap">
-  <div class="gh rv"><span class="tag sec">Services</span></div>
-  <div class="svc rv">
-    <a href="#quote" class="item"><h3>Residential Painting</h3><p>Exterior painting and interior painting.</p></a>
-    <a href="#quote" class="item"><h3>Commercial Painting</h3><p>Exterior painting and interior painting.</p></a>
-    <a href="#quote" class="item"><h3>Line Painting</h3><p>Parking lot lines and warehouse floor markings.</p></a>
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="head center rv">
+        <p class="kicker">About us</p>
+        <h2>Painted with patience, <em>finished with discipline.</em></h2>
+        <p class="lede">We paint with the patience of craftsmen and the discipline of a studio, because the finish is only as good as what lies beneath it. Every surface is repaired, sanded and primed before colour is applied. We protect your space, respect your schedule and leave it immaculate.</p>
+      </div>
+      <ul class="trust rv">
+        <li><b>Residential</b><span>Interiors and exteriors for homes across Niagara.</span></li>
+        <li><b>Commercial</b><span>Offices, storefronts, warehouses and facades.</span></li>
+        <li><b>Itemised quotes</b><span>A site visit and a clear written quote before we start.</span></li>
+        <li><b>Spotless finish</b><span>Full clean-up and a final walkthrough on every job.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec ice" id="services">
+    <div class="wrap">
+      <div class="head center rv">
+        <p class="kicker">Our services</p>
+        <h2>Every surface, <em>done properly.</em></h2>
+      </div>
+      <ul class="svc-list rv">
+        <li><span class="si">01</span><h3>Residential painting</h3><p>Exterior painting and interior painting for your home.</p></li>
+        <li><span class="si">02</span><h3>Commercial painting</h3><p>Exterior painting and interior painting for your business.</p></li>
+        <li><span class="si">03</span><h3>Line painting</h3><p>Parking lot lines and warehouse floor markings.</p></li>
+        <li><span class="si">04</span><h3>Cabinet painting</h3><p>Kitchen and vanity cabinets refinished to a smooth, durable finish.</p></li>
+        <li><span class="si">05</span><h3>Deck &amp; fence</h3><p>Staining and painting that protects exterior wood.</p></li>
+        <li><span class="si">06</span><h3>Power washing</h3><p>Surfaces cleaned back to bare and ready for coating.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="row rv">
+        <div>
+          <span class="num">I</span>
+          <h3>Residential <em>painting</em></h3>
+          <p class="lede">Colour and finish guidance for every room, and weatherproof coats for the outside, applied by a crew that treats your home like their own.</p>
+          <ul class="scope">
+            <li><b>Interior</b><span>Walls, ceilings and trim with clean cut lines</span></li>
+            <li><b>Exterior</b><span>Siding, facades, decks and fences prepared and coated for Ontario weather</span></li>
+            <li><b>Cabinets</b><span>Cabinet painting for kitchens and bathrooms</span></li>
+            <li><b>Repairs</b><span>Interior drywall repair, trim and molding before paint goes on</span></li>
+          </ul>
+        </div>
+        <div class="media"><div class="photo" data-slot="res" role="img" aria-label="Freshly painted home"></div></div>
+      </div>
+
+      <div class="row rev rv">
+        <div>
+          <span class="num">II</span>
+          <h3>Commercial <em>painting</em></h3>
+          <p class="lede">Minimal disruption, durable coatings and a finish that represents your business well, scheduled around your hours.</p>
+          <ul class="scope">
+            <li><b>Offices</b><span>Office repainting, ceilings and common areas</span></li>
+            <li><b>Storefronts</b><span>Storefront repainting and facade coating</span></li>
+            <li><b>Warehouses</b><span>Warehouse painting for walls and structures</span></li>
+            <li><b>Maintenance</b><span>Graffiti removal and touch-ups that restore a clean look</span></li>
+          </ul>
+        </div>
+        <div class="media"><div class="photo" data-slot="com" role="img" aria-label="Commercial painting project"></div></div>
+      </div>
+
+      <div class="row rv">
+        <div>
+          <span class="num">III</span>
+          <h3>Line <em>painting</em></h3>
+          <p class="lede">Crisp, visible markings that keep lots and floors organised and safe.</p>
+          <ul class="scope">
+            <li><b>Parking lots</b><span>Parking lot lines, stalls and directional markings</span></li>
+            <li><b>Warehouses</b><span>Warehouse floor markings for aisles, zones and safety areas</span></li>
+            <li><b>Custom stencils</b><span>Numbers, arrows and symbols stencilled to spec</span></li>
+          </ul>
+        </div>
+        <div class="media"><div class="photo" data-slot="line" role="img" aria-label="Line painting project"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" id="addons">
+    <div class="wrap">
+      <div class="head center rv">
+        <p class="kicker">Core services</p>
+        <h2>Everything you need, <em>handled.</em></h2>
+        <p class="lede">Choose any of these for your project and we'll price everything together in one itemised quote.</p>
+      </div>
+      <ul class="addons rv" id="addonList"></ul>
+    </div>
+  </section>
+
+  <section class="sec tint" id="process">
+    <div class="wrap">
+      <div class="head center rv">
+        <p class="kicker">How we work</p>
+        <h2>Four steps. <em>Zero stress.</em></h2>
+      </div>
+      <ol class="steps rv">
+        <li><span class="n">01</span><h3>Consult</h3><p>A site visit and a clear, itemised quote.</p></li>
+        <li><span class="n">02</span><h3>Select</h3><p>Colour and finish guidance for your space.</p></li>
+        <li><span class="n">03</span><h3>Prepare</h3><p>Masking, repairs, sanding and priming.</p></li>
+        <li><span class="n">04</span><h3>Deliver</h3><p>Flawless coats, full clean-up and a final walkthrough.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec dark" id="quote">
+    <div class="wrap quote-grid">
+      <div class="rv">
+        <p class="kicker">Start a project</p>
+        <h2>Begin your <em>project.</em></h2>
+        <p class="lede">Share a few details and we'll respond within one business day.</p>
+        <div class="rule"></div>
+        <div class="info" id="contact">
+          <div><span class="tag">Phone</span><a href="tel:+16477077600">+1 (647) 707-7600</a></div>
+          <div><span class="tag">Area</span><p>Niagara Falls, Welland, St. Catharines &amp; more</p></div>
+        </div>
+      </div>
+      <form id="qf" class="rv">
+        <div class="field"><label for="n">Name</label><input id="n" required maxlength="100" placeholder="Full name" autocomplete="name"></div>
+        <div class="field"><label for="p">Phone</label><input id="p" type="tel" required maxlength="40" placeholder="(647) 000-0000" autocomplete="tel"></div>
+        <div class="field full"><label for="e">Email</label><input id="e" type="email" required maxlength="120" placeholder="you@email.com" autocomplete="email"></div>
+        <div class="field"><label for="t">Property</label><select id="t"><option>Residential</option><option>Commercial</option><option>Line Painting</option></select></div>
+        <div class="field"><label for="s">Service</label><select id="s"></select></div>
+        <div class="field"><label for="c">City</label><input id="c" maxlength="80" placeholder="Niagara Falls"></div>
+        <div class="field"><label for="d">Preferred Start</label><input id="d" type="date"></div>
+        <fieldset class="full"><legend class="lab">Services needed</legend><div class="chips" id="chips"></div></fieldset>
+        <div class="field full"><label for="m">Details</label><textarea id="m" maxlength="3000" placeholder="Rooms, approximate size, timeline"></textarea></div>
+        <div class="full err" id="err" role="alert"></div>
+        <div class="full"><button class="btn w" type="submit" id="send">Send Request →</button></div>
+        <div class="ok full" id="ok"><h3>Thank you.</h3><p>Your request has been received. We'll be in touch shortly.</p></div>
+      </form>
+    </div>
+  </section>
   </div>
-  <p class="tag sec addons-h rv">Add-on services</p>
-  <ul class="addons rv">
-    <li>Power Washing</li><li>Limewashing</li><li>Deck Staining</li><li>Fence Painting</li><li>Wall Painting</li><li>Ceiling Painting</li>
-    <li>Cabinet Painting</li><li>Trim &amp; Molding</li><li>Storefront Repainting</li><li>Graffiti Removal</li><li>Facade Coating</li><li>Office Repainting</li>
-    <li>Warehouse Painting</li><li>Interior Drywall Repair</li><li>Parking Lot Lines</li><li>Warehouse Floor Markings</li><li>Custom Stencils</li>
-  </ul>
-</div></section>
 
-<section class="proc" id="process"><div class="wrap">
-  <span class="tag sec">Process</span>
-  <h2 style="margin-top:26px" class="rv">Four steps. <em>Zero stress.</em></h2>
-  <div class="cols rv">
-    <div class="col"><span class="tag">I</span><h3>Consult</h3><p>A site visit and a clear, itemised quote.</p></div>
-    <div class="col"><span class="tag">II</span><h3>Select</h3><p>Colour and finish guidance for your space.</p></div>
-    <div class="col"><span class="tag">III</span><h3>Prepare</h3><p>Masking, repairs, sanding and priming.</p></div>
-    <div class="col"><span class="tag">IV</span><h3>Deliver</h3><p>Flawless coats, full clean-up, final walkthrough.</p></div>
+  <div id="galleryView" hidden>
+    <section class="pg">
+      <div class="wrap">
+        <p class="kicker">Our work</p>
+        <h2 id="galTitle">Gallery</h2>
+        <p class="lede" style="color:rgba(255,255,255,.7)">A look at recent painting projects across Niagara.</p>
+        <div class="gal-tabs" id="galTabs"></div>
+        <div class="gal-grid" id="galGrid"></div>
+        <p class="gal-msg" id="galMsg" role="status" aria-live="polite">Loading photos…</p>
+      </div>
+    </section>
+    <section class="cta-band"><div class="wrap">
+      <h2>Like what you see? <em style="color:var(--yellow)">Let's talk.</em></h2>
+      <a class="btn w" href="#quote">Request a quote</a>
+    </div></section>
   </div>
-</div></section>
+</main>
+<div class="lb" id="lb" hidden><img alt=""></div>
 
-<section class="gal" id="work"><div class="wrap">
-  <div class="gh"><span class="tag sec l">Gallery</span></div>
-  <div class="grid" id="grid"></div>
-  <p class="empty" id="gempty">Loading…</p>
-</div></section>
-
-<section class="contact" id="quote"><div class="wrap cg">
-  <div class="rv"><span class="tag sec l">Enquire</span><h2 style="margin-top:26px">Begin your <em>project.</em></h2>
-    <p class="lead">Share a few details and we'll respond within one business day.</p>
-    <div class="info"><div><span class="tag">Phone</span><a href="tel:+19055550123">(905) 555-0123</a></div><div><span class="tag">Email</span><a href="mailto:hello@stunnaspainting.ca">hello@stunnaspainting.ca</a></div><div><span class="tag">Area</span>Welland &amp; surrounding Niagara</div></div>
+<footer class="foot">
+  <div class="wrap">
+    <div><div class="logo"><svg class="mark" viewBox="0 0 40 34" aria-hidden="true"><path d="M2 18 20 3l18 15" fill="none" stroke="#ffc400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17v14h24V17" fill="#fff"/><path d="M16 20h3.5v3.5H16zm4.500 0H24v3.500h-3.500zM16 24.500h3.500V28H16zm4.500 0H24V28h-3.500z" fill="#0a0a0a"/></svg><b>Stunnas <i>Unique</i></b><span>Painting<br>Niagara, ON</span></div></div>
+    <ul><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#quote">Get a Quote</a></li></ul>
+    <ul><li>Niagara Falls · Niagara-on-the-Lake · St. Catharines</li><li>Welland · Fort Erie · Thorold · Port Colborne</li><li>Lincoln · Grimsby · And more</li><li><a href="tel:+16477077600">+1 (647) 707-7600</a></li></ul>
+    <p class="small"><span>© <script>document.write(new Date().getFullYear())</script> Stunnas Unique Painting</span><span>Niagara, Ontario · <button class="adm" id="adm" type="button">Admin login (Google)</button></span></p>
   </div>
-  <form id="qf" class="rv">
-    <div><label for="n">Name</label><input id="n" required maxlength="100" placeholder="Full name"></div>
-    <div><label for="p">Phone</label><input id="p" type="tel" required maxlength="40" placeholder="(905) 000-0000"></div>
-    <div class="full"><label for="e">Email</label><input id="e" type="email" required maxlength="120" placeholder="you@email.com"></div>
-    <div><label for="t">Property</label><select id="t"><option>Residential</option><option>Commercial</option><option>Line Painting</option></select></div>
-    <div><label for="s">Service</label><select id="s"></select></div>
-    <div><label for="c">City</label><input id="c" maxlength="80" placeholder="Welland"></div>
-    <div><label for="d">Preferred Start</label><input id="d" type="date"></div>
-    <fieldset class="full" style="border:0"><legend class="lab">Add-on services (optional)</legend><div class="chips" id="chips"></div></fieldset>
-    <div class="full"><label for="m">Details</label><textarea id="m" maxlength="3000" placeholder="Rooms, approximate size, timeline"></textarea></div>
-    <div class="full err" id="err" role="alert"></div>
-    <div class="full"><button class="btn w" type="submit" id="send">Send Request →</button></div>
-    <div class="ok full" id="ok"><h3>Thank you.</h3><p>Your request has been received. We'll be in touch shortly.</p></div>
-  </form>
-</div></section>
+</footer>
 
-<footer><div class="wrap tag"><span>© <script>document.write(new Date().getFullYear())</script> Stunna's Unique Painting</span><span>Welland, Ontario · <button class="adm" id="adm" type="button">Admin login (Google)</button></span></div></footer>
+<a class="callfab" href="tel:+16477077600" aria-label="Call Stunnas Unique Painting"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.100.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg><span>Call us</span></a>
 
 <script>
 /* page behaviour that must never depend on Firebase loading */
@@ -203,16 +433,32 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   var esc=function(t){return String(t==null?'':t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
   var els=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
     els.forEach(function(el){io.observe(el)});
   } else els.forEach(function(el){el.classList.add('in')});
+
   var ADDONS=['Power Washing','Limewashing','Deck Staining','Fence Painting','Wall Painting','Ceiling Painting','Cabinet Painting','Trim & Molding','Storefront Repainting','Graffiti Removal','Facade Coating','Office Repainting','Warehouse Painting','Interior Drywall Repair','Parking Lot Lines','Warehouse Floor Markings','Custom Stencils'];
+  $('addonList').innerHTML=ADDONS.map(function(a){return '<li>'+esc(a)+'</li>'}).join('');
   $('chips').innerHTML=ADDONS.map(function(a){return '<label class="chip"><input type="checkbox" value="'+esc(a)+'"><span>'+esc(a)+'</span></label>'}).join('');
   function fill(){var o=$('t').value==='Line Painting'?['Line Painting']:['Exterior Painting','Interior Painting'];$('s').innerHTML=o.map(function(x){return '<option>'+x+'</option>'}).join('')}
   $('t').addEventListener('change',fill);fill();
   $('d').min=new Date().toISOString().slice(0,10);
+
+  /* project photos: first one that loads is used; navy panel shows if none load. Swap any ID for your own photo. */
+  var U="https://images.unsplash.com/photo-",Q="?fm=jpg&q=80&auto=format&fit=crop&w=1200";
+  var PH={
+    res:["1562259949-e8e7689d7828","1600596542815-ffad4c1539a9","1600607687939-ce8a6c25118c"],
+    com:["1497366216548-37526070297c","1486406146926-c627a92ad1ab","1497366811353-6870744d04b2"],
+    line:["1590674899484-d5640e854abe","1506521781263-d8422e82f27a","1504307651254-35680f356dfd"]
+  };
+  Object.keys(PH).forEach(function(slot){
+    var el=document.querySelector('[data-slot="'+slot+'"]'),list=PH[slot].map(function(id){return U+id+Q}),i=0;
+    if(!el)return;
+    (function next(){if(i>=list.length)return;var im=new Image();im.alt="";im.referrerPolicy="no-referrer";im.onload=function(){el.appendChild(im)};im.onerror=function(){i++;next()};im.src=list[i]})();
+  });
 })();
 </script>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -226,7 +472,6 @@ const firebaseConfig = {
   messagingSenderId: "17536522805",
   appId: "1:17536522805:web:e150b273da9f5afdc0af7c"
 };
-
 const app = initializeApp(firebaseConfig), db = getFirestore(app), auth = getAuth(app);
 const $ = id => document.getElementById(id);
 const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -237,16 +482,53 @@ $('adm').onclick = async () => {
   catch (e) { console.error(e); if (e.code !== 'auth/popup-closed-by-user') alert('Google sign-in failed (' + e.code + ').'); }
 };
 
-/* gallery from Firestore */
-(async () => {
+/* gallery view (a separate "page" inside this file, shown at #gallery, hidden on the front page) */
+const homeV = $('homeView'), galV = $('galleryView'), lb = $('lb'), lbImg = lb.querySelector('img');
+let items = null, loading = false;
+const label = c => c === 'all' ? 'All work' : c.replace(/\b\w/g, m => m.toUpperCase());
+const catOf = g => String(g.category || '').trim().toLowerCase();
+lb.onclick = () => { lb.hidden = true; lbImg.removeAttribute('src') };
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.hidden = true });
+
+function showCat(cat){
+  $('galTitle').textContent = cat === 'all' ? 'Gallery' : label(cat);
+  [...$('galTabs').children].forEach(b => b.classList.toggle('on', b.dataset.cat === cat));
+  const list = cat === 'all' ? items : items.filter(g => catOf(g) === cat);
+  $('galMsg').textContent = list.length ? '' : (items.length ? 'No photos in this category yet.' : 'New photos are coming soon. Request a quote and we will be happy to show you recent work.');
+  $('galGrid').innerHTML = list.map((g, i) => `<button type="button" class="gal-item" data-i="${i}" aria-label="View photo larger"><img src="${esc(g.image)}" alt="${esc(g.label || 'Painting project')}" loading="lazy">${g.label ? `<span>${esc(g.label)}</span>` : ''}</button>`).join('');
+  $('galGrid').onclick = e => { const b = e.target.closest('.gal-item'); if (b) { lbImg.src = list[+b.dataset.i].image; lb.hidden = false } };
+}
+async function loadGallery(){
+  if (items || loading) return; loading = true;
   try {
-    const snap = await getDocs(query(collection(db, 'gallery'), orderBy('created', 'desc'), limit(30)));
-    if (snap.empty) { $('gempty').textContent = 'Photos coming soon.'; return }
-    $('gempty').remove();
-    $('grid').innerHTML = snap.docs.map(d => { const g = d.data();
-      return `<figure><img src="${g.image}" alt="${esc(g.label || 'Painting project')}" loading="lazy">${g.label ? `<figcaption class="tag">${esc(g.label)}</figcaption>` : ''}</figure>` }).join('');
-  } catch (e) { console.error(e); $('gempty').textContent = 'Gallery is unavailable right now.' }
-})();
+    const snap = await getDocs(query(collection(db, 'gallery'), orderBy('created', 'desc'), limit(100)));
+    items = snap.docs.map(d => d.data()).filter(g => g.image);
+    const cats = [...new Set(items.map(catOf).filter(Boolean))];
+    if (cats.length) {
+      $('galTabs').innerHTML = ['all', ...cats].map(c => `<button type="button" class="gtab" data-cat="${esc(c)}">${esc(label(c))}</button>`).join('');
+      $('galTabs').onclick = e => { const b = e.target.closest('.gtab'); if (b) showCat(b.dataset.cat) };
+    }
+    showCat('all');
+  } catch (e) { console.error(e); $('galMsg').textContent = 'Photos could not be loaded right now. Please try again shortly.' }
+  loading = false;
+}
+function route(first){
+  const h = location.hash;
+  lb.hidden = true;
+  if (h === '#gallery') {
+    homeV.hidden = true; galV.hidden = false; loadGallery();
+    window.scrollTo({ top: 0, behavior: 'instant' }); document.title = "Gallery | Stunnas Unique Painting";
+    return;
+  }
+  const wasGallery = !galV.hidden;
+  galV.hidden = true; homeV.hidden = false; document.title = HOME_TITLE;
+  const t = h.length > 1 ? document.getElementById(decodeURIComponent(h.slice(1))) : null;
+  if (t) requestAnimationFrame(() => t.scrollIntoView());
+  else if (wasGallery || h === '#top') window.scrollTo({ top: 0, behavior: 'instant' });
+}
+const HOME_TITLE = document.title;
+window.addEventListener('hashchange', () => route());
+route(true);
 
 /* quote → Firestore */
 $('qf').addEventListener('submit', async e => {
