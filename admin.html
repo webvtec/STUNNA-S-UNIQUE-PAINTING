@@ -49,7 +49,9 @@ label{display:block;font-size:.64rem;letter-spacing:.22em;text-transform:upperca
 .gi{background:var(--card);border:1px solid var(--line)}
 .gi img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
 .gi div{padding:12px;display:grid;gap:10px}
-.up.drag{border-color:var(--blue);background:#1a1d2e}
+.dz{border:2px dashed rgba(255,255,255,.3);padding:34px 20px;text-align:center;color:var(--g);margin-bottom:14px;transition:.2s;cursor:pointer}
+.dz b{display:block;color:#fff;font-weight:500;font-size:1.05rem;margin-bottom:4px}
+#gallery.drag .dz{border-color:var(--blue);background:#1a1d2e;color:#fff}
 .prog{grid-column:1/-1;height:4px;background:var(--line)}
 .prog div{height:100%;width:0;background:var(--blue);transition:width .2s}
 @media(max-width:700px){.up{grid-template-columns:1fr}}
@@ -81,6 +83,7 @@ label{display:block;font-size:.64rem;letter-spacing:.22em;text-transform:upperca
     </div>
 
     <div id="gallery" hidden>
+      <div class="dz" id="dz"><b>Drag and drop photos here</b>They upload as soon as you drop them. Or click to choose files.</div>
       <div class="up" id="drop">
         <div><label for="files">Photos (JPG, PNG or WebP). Select many, or drag and drop them here</label><input id="files" type="file" accept="image/*" multiple></div>
         <div><label for="cap">Label (optional)</label><input id="cap" maxlength="60" placeholder="Interior, Exterior…"></div>
@@ -219,10 +222,19 @@ const setFiles = list => {
   $('upMsg').textContent = queue.length ? `${queue.length} photo${queue.length > 1 ? 's' : ''} ready. Click Upload.` : 'No images found in that selection.';
 };
 $('files').onchange = () => setFiles($('files').files);
-const drop = $('drop');
-['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('drag'); }));
-['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('drag'); }));
-drop.addEventListener('drop', e => { setFiles(e.dataTransfer.files); });
+// Drag and drop: stop the browser opening dropped files, and upload them when dropped on the gallery tab
+['dragover', 'drop'].forEach(ev => window.addEventListener(ev, e => e.preventDefault()));
+const gal = $('gallery'); let depth = 0;
+const hasFiles = e => [...(e.dataTransfer?.types || [])].includes('Files');
+gal.addEventListener('dragenter', e => { if (hasFiles(e)) { depth++; gal.classList.add('drag'); } });
+gal.addEventListener('dragleave', () => { depth = Math.max(0, depth - 1); if (!depth) gal.classList.remove('drag'); });
+gal.addEventListener('drop', e => {
+  depth = 0; gal.classList.remove('drag');
+  if (!hasFiles(e) || $('upBtn').disabled) return;
+  setFiles(e.dataTransfer.files);
+  if (queue.length) $('upBtn').click();
+});
+$('dz').onclick = () => $('files').click();
 
 $('upBtn').onclick = async () => {
   if (!queue.length) { $('upMsg').textContent = 'Choose at least one photo first.'; return; }
